@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ふぁいるあっぷろーど</title>
+  <link rel="stylesheet" href="/stylesheets/admin/common.css">
+</head>
+</head>
+<body>
+  <% if(complete == false){ %>
+  <form action="fileUpload" method="post" enctype="multipart/form-data">  
+    <div class="image-uploader">
+      <input type="file" name="file">
+    </div>
+    <div class="btn-submit">
+      <input type="submit" value="送信">
+    </div>
+    <p class="err"><%= errMsg %></p>
+  </form>
+  <% }else{ %>
+  <p>ファイルアップロード完了！！</p>
+  <a href="/admin/fileUpload">戻る</a>
+  <% } %>
+</body>
+</html>

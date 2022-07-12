@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <%- include('../partials/head'); %>
+  <link rel="stylesheet" href="/stylesheets/item.css">
+</head>
+<body>
+  <!-- Header -->
+  <%- include('../partials/header'); %>
+  <!-- Header -->
+
+  <!-- Overlay -->
+  <%- include('../partials/overlay'); %>
+  <!-- Overlay -->
+
+  <!-- Main -->
+  <main class="wrapper">
+    <h2 class="page-title"><%= product.name %></h2>
+    <div class="flex-container">
+      <div class="image">
+        <% if(product.exitImage){%>
+          <img src="/uploads/<%= product.imagePath %>.jpg" alt="<%= product.name %>">
+        <% } else {%>
+          <img src="/images/noimage760x460.png" alt="<%= product.name %>">
+        <% } %>
+      </div>
+      <div class="detail">
+        <p class="description">
+          <%= product.description %>
+        </p>
+        <!-- <p class="description">
+          テキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキスト
+        </p> -->
+        <p class="price">&yen; <%= product.price.toLocaleString() %> + tax</p>
+        <dl class="option">
+          <dt>SIZE:</dt>
+          <dd>W<%= product.width %> × D<%= product.depth %> × H<%= product.height %></dd>
+          <dt>COLOR: </dt>
+          <dd><%= color %></dd>
+          <dt>MATERIAL: </dt>
+          <dd><%= material %></dd>
+        </dl>
+        <div class="link-products">
+          <a href="/products">Back To Products</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Main -->
+
+  <!-- Footer -->
+  <%- include('../partials/footer'); %>
+  <!-- Footer -->
+
+  <!-- JavaScript -->
+  <script src="/javascripts/common.js"></script>
+  <!-- JavaScript -->
+</body>
+</html>

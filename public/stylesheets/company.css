@@ -1,0 +1,36 @@
+@charset "utf-8";
+.company{
+  width: 50%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info dl{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.info dt, .info dd{
+  padding: 1rem 0;
+  border-bottom: 1px solid lightgray;
+}
+.info dt{
+  width: 30%;
+}
+.info dd{
+  width: 70%;
+}
+.info dt:nth-last-child(2), .info dd:last-child{
+  border-bottom: none;
+}
+#map{
+  margin: 2rem auto;
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+@media screen and (max-width: 900px){
+  .company{
+    width: 100%;
+  }
+}

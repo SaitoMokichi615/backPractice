@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品管理</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="/stylesheets/admin/edit.css">
+</head>
+<body>
+  <main>
+    <h1>商品管理</h1>
+    <form action="post">
+      <dl class="form-area">
+
+        <dt>
+          <label for="name">商品名</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <input type="text" id="name" name="product-name">
+          <p id="name-error" class="error-text"></p>
+        </dd>
+
+        <dt>
+          <label for="description">説明</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <input type="text" id="description" name="product-description">
+          <p id="description-error" class="error-text"></p>
+        </dd>
+
+        <dt>
+          <label for="price">値段</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <input type="text" id="price" name="product-price">
+          <p id="price-error" class="error-text"></p>
+        </dd>
+
+        <dt>
+          <label for="color">色</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <select id="product-color" name="color">
+            <option value="">-- 選択してください --</option>
+            <option value="1"> 赤 </option>
+            <option value="2"> 黒 </option>
+            <option value="3"> 白 </option>
+          </select> 
+          <p id="color-error" class="error-text"></p>
+        </dd>
+
+        <dt>
+          <label for="material">素材</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <select id="product-material" name="material">
+            <option value="">-- 選択してください --</option>
+            <option value="1"> 木材 </option>
+            <option value="2"> 漆器 </option>
+          </select> 
+          <p id="material-error" class="error-text"></p>
+        </dd>
+
+        <dt>
+          <label for="size">サイズ</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <div class="size-flex-container">
+            <div class="input-size">
+              <label for="width">幅　</label>
+              <input type="text" id="width" name="product-width">
+              <p id="width-error" class="error-text"></p>
+            </div>
+            <div class="input-size">
+              <label for="height">高さ</label>
+              <input type="text" id="height" name="product-height">
+              <p id="height-error" class="error-text"></p>
+            </div>
+            <div class="input-size">
+              <label for="depth">奥行</label>
+              <input type="text" id="depth" name="product-depth">
+              <p id="depth-error" class="error-text"></p>
+            </div>
+          </div>
+        </dd>
+
+        <dt>
+          <label for="image">画像</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <div class="image-uploader">
+            <input type="file" name="file">
+          </div>
+          <div class="image">
+            <img src="/images/noimage760x460.png">
+          </div>
+          <p id="image-error" class="error-text"></p>
+        </dd>
+
+        <dt>
+          <label for="material">表示状態</label>
+          <span>必須</span>
+        </dt>
+        <dd>
+          <input type="radio" name="flgDisp" value="0" checked>表示しない
+          <input type="radio" name="flgDisp" value="1">表示する
+          <p id="fgl-disp-error" class="error-text"></p>
+        </dd>
+
+      </dl>
+      <div class="btn-area">
+        <button id="btn-submit" type="button">新規登録</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

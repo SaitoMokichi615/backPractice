@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品管理</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="/stylesheets/admin/list.css">
+</head>
+<body>
+  <main>
+    <h1>商品管理</h1>
+    <% if(products){%>
+    <table class="table-items">
+      <thead>
+        <tr>
+          <th class="items">
+            <p class="btn btn-add" href="/admin/editProduct">新規追加</p>
+          </th>
+          <th class="item-chest">ID</th>
+          <th class="item-weist">商品名</th>
+          <th class="item-weist">表示状態</th>
+          <th class="item-height">商品画像</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(product of products){%>
+        <tr>
+          <td class="btn-list">
+            <a class="btn btn-upd" href="/admin/editProduct?id=<%= product.id %>">編集</a>
+            <p class="btn btn-del" id="<%= product.id %>">削除</p>
+          </td>
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
+          <td>
+            <% if(product.flgDisp){ %>
+              <div class="flg-true">〇</div>
+            <% }else{ %>
+              <div class="flg-false">×</div>
+            <% } %>
+          </td>
+          <td>
+            <% if(product.exitImage){%>
+              <img src="/uploads/<%= product.imagePath %>.jpg" alt="<%= product.name %>">
+            <% } else {%>
+              <img src="/images/noimage760x460.png" alt="<%= product.name %>">
+            <% } %>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } %>
+    <%- include('../../partials/admin/pagenator'); %>
+    
+    <!-- Modal -->
+    <section id="modal" class="hidden">
+      <p>選択した商品を削除します。よろしいですか？</p>
+      <div id="btn-close">
+        閉じる
+      </div>
+    </section>
+    <!-- Model -->
+
+    <!-- Mask -->
+    <div id="mask" class="hidden"></div>
+    <!-- Mask -->
+  </main>
+  <script src="/javascripts/modal.js"></script>
+</body>
+</html>

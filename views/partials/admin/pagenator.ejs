@@ -1,0 +1,9 @@
+<ul class="pagenation">
+  <% for(let num=0; num< numPagenations; num++){ %>
+    <% if(num == currentPage-1){ %>
+      <li><%= currentPage %></li>    
+    <% } else {%>
+      <li><a href="/admin/listProducts?page=<%= num+1 %>"><%= num+1 %></a></li>
+    <% } %>
+  <% } %>
+</ul>
